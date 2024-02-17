@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Drop Time NIC IT</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<main class="app">
+    <header class="app-header">
+        <div class="container">
+            <h1 class="app-title">Drop Time NIC IT</h1>
+            <button class="app-favorites-toggle hidden">
+                <span class="app-favorites-label">Favorites</span>
+                <span class="app-favorites-count">0</span>
+            </button>
+        </div>
+    </header>
+    <section class="app-content container">
+        <form class="app-form">
+            <div>
+                <label for="date" class="visually-hidden">Date</label>
+                <input type="date" min="" max="" id="date" name="date">
+                <button type="submit">Get Drop Time</button>
+            </div>
+        </form>
+        <form class="app-search-form hidden">
+            <div>
+                <label for="search" class="visually-hidden">Search</label>
+                <input type="text" id="search" class="search-domains">
+                <button type="button" id="reset-search">Reset</button>
+                <button type="submit">Search</button>
+            </div>
+        </form>
+        <div class="app-pagination hidden">
+            <ul class="app-domains"></ul>
+            <nav class="app-pagination-nav">
+                <button class="app-pagination-prev">&laquo;</button>
+                <button class="app-pagination-next">&raquo;</button>
+            </nav>
+        </div>
+    </section>
+    <aside class="app-favorites">
+        <button class="app-favorites-close">&times;</button>
+        <ul class="app-favorites-list"></ul>
+    </aside>
+    <div class="app-loader hidden"><div></div></div>
+</main>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/DomainStorage.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/Pagination.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

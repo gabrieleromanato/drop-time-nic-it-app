@@ -1,0 +1,342 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 100%;
+    list-style: none;
+}
+
+:root {
+    --body-bg: #ffffff;
+    --text-color: #000000;
+    --button-bg: #f36668;
+    --button-color: #ffffff;
+    --button-hover: #f36668;
+    --border-color: #ddd;
+    --container-width: 1120px;
+    --main-font: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--body-bg);
+    color: var(--text-color);
+    font-family: var(--main-font);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0;
+    }
+}
+
+.app-header {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.app-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--button-bg);
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+
+.app-favorites-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.app-favorites-label {
+    font-weight: 800;
+    color: var(--button-bg);
+    letter-spacing: .1rem;
+    margin-right: 1rem;
+}
+
+.app-favorites-count {
+    background: var(--button-bg);
+    color: var(--button-color);
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    font-size: .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.app-content {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.app-form {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: .5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+}
+
+.app-form div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.app-form input {
+    width: 80%;
+    padding: .8rem .5rem;
+    border: 1px solid var(--border-color);
+    border-radius: .5rem;
+    background: #fff;
+}
+
+.app-form input:focus {
+    outline: none;
+    border-color: var(--button-bg);
+}
+
+.app-form button {
+    padding: .8rem 1.5rem;
+    border: none;
+    border-radius: .5rem;
+    background: var(--button-bg);
+    color: var(--button-color);
+    cursor: pointer;
+}
+
+.app-favorites {
+    padding: 1rem;
+    width: 20%;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    min-height: 100%;
+    box-shadow: -1px 0 1rem rgba(0, 0, 0, .1);
+    transition: all 400ms ease-in-out;
+    transform: translateX(100%);
+}
+
+.app-favorites.show {
+    transform: translateX(0);
+}
+
+.app-favorites-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.app-favorites ul {
+    list-style: none;
+    padding: 2rem 0;
+    margin: 0;
+}
+
+.app-favorites li {
+    margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.app-favorites li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.app-favorites li button {
+    border: none;
+    color: var(--button-bg);
+    cursor: pointer;
+    background: none;
+    font-size: 1.5rem;
+}
+
+.app-search-form {
+    margin: 1.5rem 0;
+}
+
+.app-search-form div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input.search-domains {
+    width: 80%;
+    padding: .8rem .5rem;
+    border: 1px solid var(--border-color);
+    border-radius: .2rem;
+    display: block;
+}
+
+input.search-domains:focus {
+    outline: none;
+    border-color: var(--button-bg);
+}
+
+.app-search-form div button {
+    padding: .8rem 1.5rem;
+    border: none;
+    border-radius: .2rem;
+    background-color: var(--button-bg);
+    color: var(--button-color);
+    cursor: pointer;
+}
+
+.app-search-form div button#reset-search {
+    background-color: #eee;
+    color: #000;
+}
+
+.app-pagination nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.app-pagination nav button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 .6rem;
+    border: none;
+    border-radius: .2rem;
+    background-color: #eee;
+    color: #000;
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+}
+
+.app-pagination nav button:disabled {
+    background-color: #ddd;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.app-domains {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: .5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+    margin: 2.5rem 0;
+}
+
+.app-domains li {
+    margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.app-domains li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.app-domains li button {
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: .2rem;
+    background-color: var(--button-bg);
+    color: var(--button-color);
+    cursor: pointer;
+}
+
+.app-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 2rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, .9);
+    z-index: 1000;
+}
+
+.app-loader div {
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--button-bg);
+    border-radius: 50%;
+    animation: app-loader 1s infinite ease-in-out;
+}
+
+@keyframes app-loader {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
